@@ -6,9 +6,9 @@
 Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.<br>
 With variety of service from creating your simple machine-learning research to deployment at scale.<br>
 We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
-TO-DO add here some information
+**TO-DO** add here some information
 
-## Scope # TO-DO
+## Scope **TO-DO**
 * What data science solutions are we trying to build?
 * What will we do?
 * How is it going to be consumed by the customer?
@@ -32,7 +32,7 @@ TO-DO add here some information
 * Quantify what improvement in the values of the metrics are useful for the customer scenario (e.g. reduce the  fraction of users with 4-week inactivity by 20%) 
 * Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores.
 * What is the baseline (current) value of the metric? (e.g. current fraction of users with 4-week inactivity = 60%)
-* # TO-DO
+* **TO-DO**
 * How will we measure the metric? (e.g. A/B test on a specified subset for a specified period; or comparison of performance after implementation to baseline)
 * We will compare our improved baseline with market common implementations with several datasets.
 
