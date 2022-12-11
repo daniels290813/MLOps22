@@ -3,35 +3,48 @@
 ## Business background
 
 * Who is the client, what business domain the client is in.
-* What business problems are we trying to address?
+Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.
+With variety of service from creating your simple machine-learning research to deployment at scale.
+We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.
+# TO-DO add here some information 
 
-## Scope
+## Scope # TO-DO
 * What data science solutions are we trying to build?
 * What will we do?
 * How is it going to be consumed by the customer?
 
 ## Personnel
-* Who are on this project:
-	* Microsoft:
+* Our team:
+	* Gydi:
 		* Project lead
-		* PM
+		* Data Engineer
 		* Data scientist(s)
-		* Account manager
+		* Customer support
 	* Client:
 		* Data administrator
-		* Business contact
+		* Head of science
 	
 ## Metrics
 * What are the qualitative objectives? (e.g. reduce user churn)
+* Gydy will reduce machine learning research time and will improve your baselines scores by providing generic pipelines.
 * What is a quantifiable metric  (e.g. reduce the fraction of users with 4-week inactivity)
+* Increase baseline models MAE, RMSE and more, reduce research & implementation time.
 * Quantify what improvement in the values of the metrics are useful for the customer scenario (e.g. reduce the  fraction of users with 4-week inactivity by 20%) 
+* Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores.
 * What is the baseline (current) value of the metric? (e.g. current fraction of users with 4-week inactivity = 60%)
+# TO-DO
 * How will we measure the metric? (e.g. A/B test on a specified subset for a specified period; or comparison of performance after implementation to baseline)
+* We will compare our improved baseline with market common implementations with several datasets.
 
 ## Plan
 * Phases (milestones), timeline, short description of what we'll do in each phase.
+* Phase 1 - Getting datasets, EDA.
+* Phase 2 - Getting baseline models.
+* Phase 3 - Research for existing tools to answer our problem.
+* Phase 4 - Focus on several tools and test them.
+* Phase 5 - Create a pipeline with best tools.
 
-## Architecture
+## Architecture # TO-DO
 * Data
   * What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)
 * Data movement from on-prem to Azure using ADF or other data movement tools (Azcopy, EventHub etc.) to move either
@@ -50,5 +63,12 @@
     * If there is a substantial change in the customer's business workflow, make a before/after diagram showing the data flow.
 
 ## Communication
-* How will we keep in touch? Weekly meetings?
+* Our team for this project:
+	* Daniel Sabba
+	* Yossi Gavriel
+	* Jonathan Erell
+	* Guy Sedan 
+	
 * Who are the contact persons on both sides?
+* Yossi Gavriel
+* DR. Ishay
