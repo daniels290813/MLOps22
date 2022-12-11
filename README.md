@@ -6,7 +6,7 @@
 Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.<br>
 With variety of service from creating your simple machine-learning research to deployment at scale.<br>
 We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
-# TO-DO add here some information
+* # TO-DO add here some information
 
 ## Scope # TO-DO
 * What data science solutions are we trying to build?
