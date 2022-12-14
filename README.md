@@ -7,7 +7,7 @@ Gydy TM is a strong player in the datascience-consult arena, providing end-to-en
 With variety of service from creating your simple machine-learning research to deployment at scale.<br>
 We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
 
-## Scope **TO-DO**
+## Scope
 * What data science solutions are we trying to build?
 As a solution to our research question, we aim to develop generic pipeline that will clean, preprocess and transform all data types.<br>
 further more we wish to imporve our data with feature selection techniques and data resampling/reweighting in order to imporve our baselines.<br>
@@ -49,7 +49,7 @@ Playing with different pipeline params is advised !
 * Phase 4 - Focus on several tools and test them.
 * Phase 5 - Create a pipeline with best tools.
 
-## Architecture # TO-DO
+## Architecture
 * Data
   * What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)
   * We expact that customer's data will be able to fit in a dataframe (csv, parquet, json etc) and on prem files, further integration with spark will be supported.
@@ -68,6 +68,7 @@ our pipeline will be fused in each of the data-scientists day-to-day work, with 
   * In production, a serving function / serving graph holding the pipeline implementation for easy data manipulation in production.
   * When files are stored on cloud providers, proper credentials has to be declared.
   * Make a 1 slide diagram showing the end to end data flow and decision architecture
+  ![my diagram](my_diagram.png)
     * If there is a substantial change in the customer's business workflow, make a before/after diagram showing the data flow.
 
 ## Communication
