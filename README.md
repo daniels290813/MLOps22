@@ -2,9 +2,7 @@
 
 ## Business background
 * Who is the client, what business domain the client is in.<br>
-Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.<br>
-With variety of service from creating your simple machine-learning research to deployment at scale.<br>
-We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
+There are many potential clients who may find the Boston Housing dataset useful. For example, the dataset could be used by real estate professionals or investors to better understand housing trends and patterns in the Boston area. It could also be used by policymakers or urban planners to gain insight into the housing market and to develop strategies for addressing issues such as affordability and accessibility. Additionally, the dataset could be of interest to researchers and students studying.
 
 ## Scope
 * What data science solutions are we trying to build?<br>
