@@ -16,9 +16,9 @@ In our pipeline, we will also check the fairness of the model. The data we use f
 
 To check for bias in each feature, we will use the Dalex package to measure fairness. If we detect unfairness, we will try one or both of the following options:
 
-	* Reweighting the data: We will obtain weights for the model training pipeline and mitigate bias in statistical parity. This method will produce weights for the given subgroup for each class.
+ - Reweighting the data: We will obtain weights for the model training pipeline and mitigate bias in statistical parity. This method will produce weights for the given subgroup for each class.
 
-	* Resampling the data: We will return indices of observations for the data. Similar to reweighting, this method computes the desired number of observations as if the protected variable were independent of the outcome variable (y), and based on this, it determines if the subgroup with a certain class (favorable or not) should be more or less numerous. It then performs oversampling or undersampling, depending on the case. <br>
+ - Resampling the data: We will return indices of observations for the data. Similar to reweighting, this method computes the desired number of observations as if the protected variable were independent of the outcome variable (y), and based on this, it determines if the subgroup with a certain class (favorable or not) should be more or less numerous. It then performs oversampling or undersampling, depending on the case.
 
 By using one or both of these options, we can build a more balanced dataset for the model training pipeline.
 
