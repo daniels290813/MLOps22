@@ -1,7 +1,7 @@
 # Project Charter
 
 ## Business background
-* Who is the client, what business domain the client is in.<br>
+**Who is the client, what business domain the client is in?**<br>
 Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.<br>
 With variety of service from creating your simple machine-learning research to deployment at scale.<br>
 We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
@@ -22,7 +22,7 @@ To check for bias in each feature, we will use the Dalex package to measure fair
 
 By using one or both of these options, we can build a more balanced dataset for the model training pipeline.
 
-* How is it going to be consumed by the customer?<br>
+**How is it going to be consumed by the customer?**<br>
 To all of our cool customers, you can simply copy our pipeline implementation and run it in your environments.<br>
 Playing with different pipeline params is advised !<br>
 
@@ -38,15 +38,15 @@ Playing with different pipeline params is advised !<br>
 		* Head of science
 	
 ## Metrics
-* What are the qualitative objectives? (e.g. reduce user churn)<br>
+**What are the qualitative objectives? (e.g. reduce user churn)**<br>
 * Gydy will reduce machine learning research time and will improve your baselines scores by providing generic pipelines.<br>
-* What is a quantifiable metric  (e.g. reduce the fraction of users with 4-week inactivity)<br>
+**What is a quantifiable metric?**<br>
 * Increase baseline models MAE, RMSE and more, reduce research & implementation time.<br>
 * Quantify what improvement in the values of the metrics are useful for the customer scenario (e.g. reduce the  fraction of users with 4-week inactivity by 20%) <br>
 * Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores.<br>
-* What is the baseline (current) value of the metric? (e.g. current fraction of users with 4-week inactivity = 60%)<br>
+**What is the baseline (current) value of the metric?**<br>
 * We benchmark xgb regressor with two datasets, boston house price (2.87 MAE) and french motor (0.003 MAE)<br>
-* How will we measure the metric? (e.g. A/B test on a specified subset for a specified period; or comparison of performance after implementation to baseline)<br>
+**How will we measure the metric?**<br>
 * We will compare our improved baseline with market common implementations with several datasets.<br>
 
 ## Plan
