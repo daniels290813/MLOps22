@@ -38,16 +38,24 @@ Playing with different pipeline params is advised !<br>
 		* Head of science
 	
 ## Metrics
-**What are the qualitative objectives? (e.g. reduce user churn)**<br>
-* Gydy will reduce machine learning research time and will improve your baselines scores by providing generic pipelines.<br>
-**What is a quantifiable metric?**<br>
-* Increase baseline models MAE, RMSE and more, reduce research & implementation time.<br>
-* Quantify what improvement in the values of the metrics are useful for the customer scenario (e.g. reduce the  fraction of users with 4-week inactivity by 20%) <br>
-* Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores.<br>
+**What are the qualitative objectives?**<br>
+We will provide number of possible qualitative objectives: <br>
+* Providing a more scalable ML framework <br>
+* Less biased predictor <br>
+
+**What are the quantifiable metric?** <br>
+We will provide number of possible qualitative metrics: <br>
+* Reducing machine learning research time <br>
+* Improvement of your baselines scores by providing generic pipelines <br>
+* Increase baseline models' MAE <br>
+* Quantify what improvement in the values of the metrics are useful for the customer scenario <br>
+* Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores <br>
+
 **What is the baseline (current) value of the metric?**<br>
-* We benchmark xgb regressor with two datasets, boston house price (2.87 MAE) and french motor (0.003 MAE)<br>
+We benchmark xgb regressor with two datasets, boston house price (2.87 MAE) and french motor (0.003 MAE) <br>
+
 **How will we measure the metric?**<br>
-* We will compare our improved baseline with market common implementations with several datasets.<br>
+We will compare our improved baseline with market common implementations with several datasets.<br>
 
 ## Plan
 * Phases (milestones), timeline, short description of what we'll do in each phase.
