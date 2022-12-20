@@ -7,10 +7,10 @@ With variety of service from creating your simple machine-learning research to d
 We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
 
 ## Scope
-** What data science solutions are we trying to build? **<br>
+**What data science solutions are we trying to build?**<br>
 As a solution to our research question, we aim to develop generic pipeline that will clean, preprocess and transform all data types.<br>
 further more we wish to imporve our data with feature selection techniques and data resampling/reweighting in order to imporve our baselines.<br>
-** What will we do? **<br>
+**What will we do?**<br>
 
 In our pipeline, we will also check the fairness of the model. The data we use for modeling is mostly a reflection of the real world, and the real world can be biased, so the data and therefore the model will likely reflect that bias. To check the fairness of the model, we will examine each feature of our dataset to see if it is biased by a subclass of that feature. For example, we might define a group based on the sex of the sample, and a subgroup based on age. We might then define the privileged subgroup as old males, who may be privileged in cases of house pricing.
 
