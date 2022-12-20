@@ -12,11 +12,7 @@ As a solution to our research question, we aim to develop generic pipeline that 
 further more we wish to imporve our data with feature selection techniques and data resampling/reweighting in order to imporve our baselines.<br>
 * What will we do?<br>
 
-In our pipeline, we will also check the fairness of the model.<br>
-The data we use for modeling is mostly a reflection of the real world, and the real world can be biased, so the data and therefore the model will likely reflect that bias.<br>
-To check the fairness of the model, we will examine each feature of our dataset to see if it is biased by a subclass of that feature.<br>
-For example, we might define a group based on the sex of the sample, and a subgroup based on age.<br>
-We might then define the privileged subgroup as old males, who may be privileged in cases of house pricing.<br>
+In our pipeline, we will also check the fairness of the model. The data we use for modeling is mostly a reflection of the real world, and the real world can be biased, so the data and therefore the model will likely reflect that bias. To check the fairness of the model, we will examine each feature of our dataset to see if it is biased by a subclass of that feature. For example, we might define a group based on the sex of the sample, and a subgroup based on age. We might then define the privileged subgroup as old males, who may be privileged in cases of house pricing.
 
 To check for bias in each feature, we will use the Dalex package to measure fairness. If we detect unfairness, we will try one or both of the following options:
 
