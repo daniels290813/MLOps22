@@ -2,9 +2,9 @@
 
 ## Business background
 **Who is the client, what business domain the client is in?**<br>
-Gydy TM is a strong player in the datascience-consult arena, providing end-to-end mlops pipelines customized for the customer.<br>
-With variety of service from creating your simple machine-learning research to deployment at scale.<br>
-We exemined our different customers and concluded that genereic pipelines will shorten their research time by up to 40%.<br>
+Business clients in the field of real estate that use machine learning could include real estate agencies, property management companies, and real estate investment trusts (REITs).<br> These organizations may use machine learning to improve their operations and make more informed decisions.<br> For example, they may use machine learning algorithms to analyze large amounts of data on property values, rental rates, and market trends to predict the performance of different properties or to identify potential investment opportunities.<br> Machine learning may also be used to automate tasks such as analyzing property listings or identifying patterns in data that could indicate potential problems or opportunities.<br> Other potential applications for machine learning in the real estate industry include automating the process of identifying and evaluating properties for purchase or investment, predicting maintenance needs for properties, and analyzing customer preferences and behavior to tailor marketing efforts.<br>
+
+Business clients in the field of insurance that use machine learning typically do so to improve their underwriting processes, fraud detection, and claims management.<br> By analyzing large amounts of data, insurance companies can build machine learning models that can identify patterns and trends that might not be immediately obvious to humans.<br> These models can then be used to make more accurate predictions about the likelihood of certain events occurring, such as the probability of a claim being filed or the likelihood of a policyholder experiencing a loss.<br> This can help insurance companies to make more informed decisions about which risks to insure and at what cost, ultimately leading to more efficient and effective operations.
 
 ## Scope
 **What data science solutions are we trying to build?**<br>
@@ -86,33 +86,41 @@ We benchmark xgb regressor with two datasets, boston house price (2.87 MAE) and 
 We will compare our improved baseline with market common implementations with several datasets.<br>
 
 ## Plan
-* Phases (milestones), timeline, short description of what we'll do in each phase.
-* Phase 1 - Getting datasets, EDA.
-* Phase 2 - Getting baseline models.
-* Phase 3 - Research for existing tools to answer our problem.
-* Phase 4 - Focus on several tools and test them.
-* Phase 5 - Create a pipeline with best tools.
+* Phase 1 - Explenatory data analysis. deadline - 24/12
+  * Understand data features, behaviour, missing values and statistics.
+  * Clean and log postprocessed data.
+* Phase 2 - Creating baseline models. deadline - 28/12
+  * What are the common models used on our dataset
+  * Benchmark common models performance (MAE) 
+* Phase 3 - Benchmark our propesed approches for improving client's ML. deadline - 5/1
+  * Data preprocess (one-hot-encoding, imputing, mapping, outlier removal).
+  * Feature selection - best models to use.
+  * Implement Dalex package to measure fairness.
+* Phase 4 - Create a pipeline with best approaches. deadline - 31/1
+  * Figure out the best tools to use (e.g. TF pipeline, kubeflow-pipeline, iguazio platform).
+  * Encapsulate our methods in one generic pipeline.
 
 ## Architecture
-* Data
-  * What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)
-  * We expact that customer's data will be able to fit in a dataframe (csv, parquet, json etc) and on prem files, further integration with spark will be supported.
-* Data movement from on-prem to Azure using ADF or other data movement tools (Azcopy, EventHub etc.) to move either
+* **What data do we expect? Raw data in the customer data sources (e.g. on-prem files, SQL, on-prem Hadoop etc.)**
+  * We are expecting that the clients data will be on-prem csv files (structured).
   * Sampled data enough for modeling 
 
-* What tools and data storage/analytics resources will be used in the solution e.g.,
+* **What tools and data storage/analytics resources will be used in the solution**
   * Pandas for data storage
   * SKlearn's stat filters and models.
-  * SKlearn's pipeline for pipeline creation
-* How will the score or operationalized web service(s) (RRS and/or BES) be consumed in the business workflow of the customer? If applicable, write down pseudo code for the APIs of the web service calls.
-our pipeline will be fused in each of the data-scientists day-to-day work, with easy implementation and customization.
-  * How will the customer use the model results to make decisions
+  * SKlearn's pipeline for pipeline creation.
+  * Dalex package.
+  * math, numpy.
+  
+* **How will the score or operationalized web service(s) (RRS and/or BES) be consumed in the business workflow of the customer? If applicable, write down pseudo code for the APIs of the web service calls.**
+  * Our pipeline will be fused in each of the data-scientists day-to-day work, with easy implementation and customization, providing better performance than common base model with plug-and-evaluate approach
+* **How will the customer use the model results to make decisions**
   * The customer will view model scores and will decide whether to choose different pipeline params or not.
-  * Data movement pipeline in production
+* **Data movement pipeline in production**
   * In production, a serving function / serving graph holding the pipeline implementation for easy data manipulation in production.
-  * When files are stored on cloud providers, proper credentials has to be declared.
-  * Make a 1 slide diagram showing the end to end data flow and decision architecture
-  ![my diagram](my_diagram.png)
+  * When files are stored on cloud providers, proper credentials has to be declared. ()
+* **Make a 1 slide diagram showing the end to end data flow and decision architecture**
+  ![my diagram](my_diagram.jpg)
     * If there is a substantial change in the customer's business workflow, make a before/after diagram showing the data flow.
 
 ## Communication
