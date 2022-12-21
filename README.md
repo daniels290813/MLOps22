@@ -22,6 +22,34 @@ To check for bias in each feature, we will use the Dalex package to measure fair
 
 By using one or both of these options, we can build a more balanced dataset for the model training pipeline.
 
+We'll also use outliers detection and removal.
+Outliers are data points significantly different from most of the other data points in a dataset.
+The outlier's detection is performed per feature separately and is possible only in continuous values. If some feature of the data point is detected as an outlier, this data point will be determined as an outlier.
+Once we have identified the outliers in our dataset, we will choose to remove them if they are causing problems with the predictions.
+For example, removing outliers may be appropriate if they skew the results. However, we should be careful about removing outliers, as they may contain valuable information about our data.
+
+So, we'll check whether removing the outliers improves results in the pipeline. 
+There are a few different ways to identify and remove outliers from a dataset.
+
+We'll examine two well-known methods for outliers' detection and use the one that will give us the best results: 
+1. Z-score: The z-score measures how many standard deviations a value is from the mean. If the z-score of a value is greater than a certain threshold (commonly 3 or 4), it can be considered an outlier.
+2. Interquartile range (IQR): 
+The IQR is a measure of the dispersion of a dataset and can be used to identify values that fall outside the range of "typical" values.
+To calculate the quartiles of a dataset, we first need to arrange the values in numerical order.
+Quartiles are values that divide a dataset into four equal parts. The first quartile (Q1) is the value that separates the lowest 25% of the data from the highest 75%. The second quartile, or median, is the value that separates the lowest 50% of the data from the highest 50%. The third quartile (Q3) is the value that separates the lowest 75% of the data from the highest 25%.
+
+	So, we'll use the following formulas to calculate the quartiles:
+
+	Q1 = (n+1) * (1/4)
+
+	Median = (n+1) * (1/2)
+
+	Q3 = (n+1) * (3/4)
+
+	Where n is the number of values in the dataset.
+	Outliers can then be identified as values that are more than x times the IQR below Q1 or above Q3.
+
+
 **How is it going to be consumed by the customer?**<br>
 To all of our cool customers, you can simply copy our pipeline implementation and run it in your environments.<br>
 Playing with different pipeline params is advised !<br>
