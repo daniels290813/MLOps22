@@ -23,7 +23,7 @@ def get_data(context: mlrun.MLClientCtx,
     
     
     elif dataset == 'motor':
-        df = pd.read_csv('/home/jovyan/data/src/freMTPL2freq.csv')
+        df = pd.read_csv(path)
         df = df[:-1].drop('IDpol',axis=1)
         df = one_hot_encoding(df)
         
