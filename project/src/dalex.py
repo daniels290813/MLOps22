@@ -164,7 +164,7 @@ class dalex_fairness:
             reweight_delta_pct = -np.inf
 
             resampled_indices = self.resample_custom(protected, self.y_train)
-            if len(resampled_indices) >= 0.85 * len(self.X_train):
+            if len(resampled_indices) >= 0.7 * len(self.X_train):
               ''' taking resample iff the resampled data is over 70% of the data '''
               clf_resmaple = self.get_pipeline_by_target_type()
               clf_resmaple.fit(copied_X_train.loc[resampled_indices, :], copied_y_train[resampled_indices])
@@ -242,7 +242,7 @@ class dalex_fairness:
         self.improved_results = self.results[self.results['Improved'] == 'Yes']
         if len(self.improved_results) == 0:
           self.best_approach = None
-
+        print(self.improved_results,'@@@@@@')
         best_reweight = np.nanmax(self.improved_results['Reweight Delta %'])
         best_resample = np.nanmax(self.improved_results['Resample Delta %'])
         if best_reweight > best_resample:
@@ -261,12 +261,14 @@ def run_dalex(context: mlrun.MLClientCtx,
               target:str = 'MEDV',
               target_type='regression'): 
     
+    log_new_data=False
+    
     df_train = df_train.as_df()
     if df_test == None:
-        X_train_full, X_valid_full, y_train, y_valid = train_test_split(df_train.drop(target, axis=1), df_train[target], train_size=0.8, test_size=0.2, random_state=50)
+        log_new_data=True
+        X_train_full, X_valid_full, y_train, y_valid = train_test_split(df_train.drop(target, axis=1), df_train[target], train_size=0.8, test_size=0.2, random_state=10)
         X_train_full[target] = y_train
         X_valid_full[target] = y_valid
-        
         df_train = X_train_full
         df_test = X_valid_full
     else:
@@ -280,17 +282,19 @@ def run_dalex(context: mlrun.MLClientCtx,
     for key,val in kwargs.items():
         kwargs[key] = val.tolist()
         
-#     dalex_output[list(best_approach.keys())[0]] = list(list(best_approach.values())[0].values())[0].tolist()
-    
+        
     if list(best_approach.keys())[0] == 'reweight':
         context.logger.info('dalex selects reweighting')
         context.log_artifact('dalex_output', body=json.dumps(kwargs))
+        if log_new_data:
+            context.log_dataset('train_data', df_train) 
+            context.log_dataset('test_data', df_test)  
     
     else:
         context.logger.info('dalex selects resampling')
-        context.log_dataset('outlier_removal_new', df_train.reset_index(drop=True).iloc[list(kwargs.values())[0]]) 
-        context.log_dataset('outlier_removal_test_new', df_test.reset_index(drop=True)) 
-        
+        context.log_dataset('train_data', df_train.reset_index(drop=True).iloc[list(kwargs.values())[0]]) 
+        context.log_dataset('test_data', df_test.reset_index(drop=True)) 
+    
     
     
     
