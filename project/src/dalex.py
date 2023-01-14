@@ -164,7 +164,7 @@ class dalex_fairness:
             reweight_delta_pct = -np.inf
 
             resampled_indices = self.resample_custom(protected, self.y_train)
-            if len(resampled_indices) >= 0.7 * len(self.X_train):
+            if len(resampled_indices) >= 0.85 * len(self.X_train):
               ''' taking resample iff the resampled data is over 70% of the data '''
               clf_resmaple = self.get_pipeline_by_target_type()
               clf_resmaple.fit(copied_X_train.loc[resampled_indices, :], copied_y_train[resampled_indices])
