@@ -25,6 +25,7 @@ from mlrun.frameworks.auto_mlrun import AutoMLRun
 from mlrun import feature_store as fs
 from mlrun.api.schemas import ObjectKind
 from mlrun.utils.helpers import create_class, create_function
+import numpy as np
 
 PathType = Union[str, Path]
 
@@ -224,7 +225,9 @@ def train(
         artifacts=context.artifacts,
     )
     context.logger.info(f"training '{model_name}'")
-    model.fit(x_train, y_train, sample_weight=sample_weight, **fit_kwargs)
+    if sample_weight:
+        fit_kwargs['sample_weight'] = np.array(sample_weight)
+    model.fit(x_train, y_train, **fit_kwargs)
 
 
 def evaluate(

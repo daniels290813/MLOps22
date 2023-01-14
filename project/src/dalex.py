@@ -262,8 +262,10 @@ def run_dalex(context: mlrun.MLClientCtx,
               target_type='regression'): 
     
     log_new_data=False
-    
+    if type(df_train) == str:
+        df_train = mlrun.get_dataitem(df_train)
     df_train = df_train.as_df()
+    
     if df_test == None:
         log_new_data=True
         X_train_full, X_valid_full, y_train, y_valid = train_test_split(df_train.drop(target, axis=1), df_train[target], train_size=0.8, test_size=0.2, random_state=10)
@@ -272,6 +274,8 @@ def run_dalex(context: mlrun.MLClientCtx,
         df_train = X_train_full
         df_test = X_valid_full
     else:
+        if type(df_test)==str:
+            df_test = mlrun.get_dataitem(df_test)
         df_test = df_test.as_df()
     
     house_model = dalex_fairness(target=target, df_train=df_train, df_test=df_test, target_type=target_type)     
@@ -286,26 +290,9 @@ def run_dalex(context: mlrun.MLClientCtx,
     if list(best_approach.keys())[0] == 'reweight':
         context.logger.info('dalex selects reweighting')
         context.log_artifact('dalex_output', body=json.dumps(kwargs))
-        if log_new_data:
-            context.log_dataset('train_data', df_train) 
-            context.log_dataset('test_data', df_test)  
-    
+        context.log_dataset('train_data', df_train) 
+        context.log_dataset('test_data', df_test)  
     else:
         context.logger.info('dalex selects resampling')
         context.log_dataset('train_data', df_train.reset_index(drop=True).iloc[list(kwargs.values())[0]]) 
         context.log_dataset('test_data', df_test.reset_index(drop=True)) 
-    
-    
-    
-    
-#     best_approach['resample_CHAS'] = best_approach['resample_CHAS'].tolist()
-#     context.logger.info(f'Dalex function resampled successfully {len(best_approach["resample_CHAS"])} samples')
-#     context.log_dataset('outlier_removal_new', df_train.reset_index(drop=True).iloc[best_approach['resample_CHAS']]) 
-#     context.log_dataset('outlier_removal_test_new', df_test.reset_index(drop=True))    
-    
-#     df_train = df_train.iloc(best_approach['resample_CHAS'])
-#     context.log_artifact('new_samples', body=json.dumps(best_approach))
-    
-#     (self, target, filename, df_train, df_test, target_type='regression')
-#     context.log_artifact(key='weights', df=pd.DataFrame())
-# cars_model = dalex_fairness(target='ClaimNb', filename='freMTPL2freq.csv', target_type='regression')
