@@ -48,13 +48,13 @@ motor voting (feature-selection) :
 ![motor_baseline](motor_fs.jpeg)
 
 * boston scores :
-MSE 13.274
-RMSE 3.643
-MAE 2.639
-R2 0.873
+MSE 13.274 <br>
+RMSE 3.643 <br>
+MAE 2.639 <br>
+R2 0.873 <br>
 
 * motor scores :
-MSE 0.056
-RMSE 0.238
-MAE 0.098
+MSE 0.056 <br>
+RMSE 0.238 <br>
+MAE 0.098 <br>
 R2 0.033
