@@ -22,10 +22,17 @@ _Baseline model is the the model a data scientist would train and evaluate quick
 
 
 ## Results (Model Performance)
+Boston :
 * MSE 13.233
 * RMSE 3.637
 * MAE 2.642
 * R2 0.873
+
+french motor :
+* MSE 0.056
+* RMSE 0.236
+* MAE 0.097
+* R2 0.0429
 
 housing baseline feature importance : 
 ![housing_baseline](housing_baseline.jpeg)
