@@ -27,7 +27,10 @@ _Baseline model is the the model a data scientist would train and evaluate quick
 * MAE 2.642
 * R2 0.873
 
+housing baseline feature importance : 
 ![housing_baseline](housing_baseline.jpeg)
+
+boston baseline feature importance : 
 ![motor_baseline](motor_baseline.jpeg)
 
 ## Model Understanding
