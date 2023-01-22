@@ -6,6 +6,12 @@ Business clients in the field of real estate that use machine learning could inc
 
 Business clients in the field of insurance that use machine learning typically do so to improve their underwriting processes, fraud detection, and claims management.<br> By analyzing large amounts of data, insurance companies can build machine learning models that can identify patterns and trends that might not be immediately obvious to humans.<br> These models can then be used to make more accurate predictions about the likelihood of certain events occurring, such as the probability of a claim being filed or the likelihood of a policyholder experiencing a loss.<br> This can help insurance companies to make more informed decisions about which risks to insure and at what cost, ultimately leading to more efficient and effective operations.
 
+Developing machine learning pipelines in production can be challenging, and a framework has to be introduced.
+By providing deep introduction to Iguazio's community edition framework and creating a complex pipeline to help them derive insights, generate plots and do data exploration.
+A complax pipeline can help those companies to derive insights about their data features using feature selection and data reweighing, concluding what has to be emphasized when making a deal.
+Or the understand what samples are considered outliers in their data using outlier-detection, to detect what transactions are "suspicious".
+
+
 ## Scope
 **What data science solutions are we trying to build?**<br>
 As a solution to our research question, we aim to develop generic pipeline that will clean, preprocess and transform all data types.<br>
@@ -68,22 +74,28 @@ Playing with different pipeline params is advised !<br>
 ## Metrics
 **What are the qualitative objectives?**<br>
 We will provide number of possible qualitative objectives: <br>
-* Providing a more scalable ML framework <br>
-* Less biased predictor <br>
+* The data exploration ability of the client <br>
+* Understanding MLOps and MLOps frameworks <br>
+* providing generic data manipulation pipeline <br>
 
 **What are the quantifiable metric?** <br>
 We will provide number of possible qualitative metrics: <br>
-* Reducing machine learning research time <br>
-* Improvement of your baselines scores by providing generic pipelines <br>
-* Increase baseline models' MAE <br>
-* Quantify what improvement in the values of the metrics are useful for the customer scenario <br>
-* Performing generic feature-selection, data reweighting and cleaning will ensure reduced deployment time and increase model scores <br>
+* Reducing machine learning research time  <br>
+* Improvement of your baselines scores by providing generic pipelines <br> 
+* Increase baseline models’ MAE, MSE, R2 <br>
+* Quantify what improvement in the values of the metrics are useful for the customer scenario, generating plots. <br>
+* Performing generic feature-selection, data reweighing and cleaning will ensure reduced deployment time and increase model scores <br>
 
 **What is the baseline (current) value of the metric?**<br>
-We benchmark xgb regressor with two datasets, boston house price (2.87 MAE) and french motor (0.003 MAE) <br>
+* No knowledge about MLOps or MLops platforms
+* no data visualizations are present
+* MSE 13.233
+* RMSE 3.637
+* MAE 2.642
+* R2 0.873
 
 **How will we measure the metric?**<br>
-We will compare our improved baseline with market common implementations with several datasets.<br>
+We will compare our improved pipeline that holds feature-selection, outlier-detection and data reweighing abilities to the baseline modes, we will explore the generated insights on the given train datasets and measure its reliability and performance.<br>
 
 ## Plan
 * Phase 1 - Explenatory data analysis. deadline - 24/12
@@ -91,11 +103,12 @@ We will compare our improved baseline with market common implementations with se
   * Clean and log postprocessed data.
 * Phase 2 - Creating baseline models. deadline - 28/12
   * What are the common models used on our dataset
-  * Benchmark common models performance (MAE) 
+  * Benchmark common models performance (MAE, RMSE, R2 and plots) 
 * Phase 3 - Benchmark our propesed approches for improving client's ML. deadline - 5/1
   * Data preprocess (one-hot-encoding, imputing, mapping, outlier removal).
   * Feature selection - best models to use.
   * Implement Dalex package to measure fairness.
+  * Outlier removal function implementation
 * Phase 4 - Create a pipeline with best approaches. deadline - 31/1
   * Figure out the best tools to use (e.g. TF pipeline, kubeflow-pipeline, iguazio platform).
   * Encapsulate our methods in one generic pipeline.
@@ -111,14 +124,15 @@ We will compare our improved baseline with market common implementations with se
   * SKlearn's pipeline for pipeline creation.
   * Dalex package.
   * math, numpy.
+  * Pyod functions for outlier removal
+  * MLruns function marketplace
   
 * **How will the score or operationalized web service(s) (RRS and/or BES) be consumed in the business workflow of the customer? If applicable, write down pseudo code for the APIs of the web service calls.**
-  * Our pipeline will be fused in each of the data-scientists day-to-day work, with easy implementation and customization, providing better performance than common base model with plug-and-evaluate approach
+  *  Using our pipelines with the different abilities will generate various plots for analysts and stakeholders to derive insights - imporve sales and 	shrink expenses. 
 * **How will the customer use the model results to make decisions**
-  * The customer will view model scores and will decide whether to choose different pipeline params or not.
+  * the customer will analyze the generated plots.
 * **Data movement pipeline in production**
-  * In production, a serving function / serving graph holding the pipeline implementation for easy data manipulation in production.
-  * When files are stored on cloud providers, proper credentials has to be declared. ()
+  * The client has the ability to set a scheduler on the given pipeline to allow continues flow, always producing data, running the pipeline, generate plots, explore and repeat.
 * **Make a 1 slide diagram showing the end to end data flow and decision architecture**
   ![my diagram](my_diagram.jpg)
     * If there is a substantial change in the customer's business workflow, make a before/after diagram showing the data flow.
