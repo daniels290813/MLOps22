@@ -64,7 +64,6 @@ Playing with different pipeline params is advised !<br>
 * Our team:
 	* Gydi:
 		* Project lead
-		* Data Engineer
 		* Data scientist(s)
 		* Customer support
 	* Client:
@@ -142,8 +141,12 @@ We will compare our improved pipeline that holds feature-selection, outlier-dete
 	* Daniel Sabba
 	* Yossi Gavriel
 	* Jonathan Erell
-	* Guy Sedan 
 	
 * Who are the contact persons on both sides?
 * Yossi Gavriel
 * DR. Ishay
+
+• We will hold weekly meetings, about 2-4 hours.
+In those sessions we will overview MLOps, we discuss about Iguazio's platform.
+We further introduce pipelines, automation and development.
+In the end, we provide the full autonomy of self building custom pipelines and bring them to production and fulfill customer needs.
