@@ -44,6 +44,6 @@ boston pipeline feature importance :
 housing voting (feature-selection) : 
 ![housing_baseline](housing_fs.jpeg)
 
-boston voting (feature-selection) : 
+motor voting (feature-selection) : 
 ![motor_baseline](motor_fs.jpeg)
 
