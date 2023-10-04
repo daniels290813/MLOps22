@@ -1,0 +1,36 @@
+name: Notebook Matrix
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    outputs:
+      nbmatrix: ${{ steps.matrix.outputs.nbmatrix }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate Notebook Matrix
+      id: matrix
+      run: |
+        echo $(pwd) 
+        echo $(ls)
+        cd project
+        nbmatrix=$(echo "{\"notebooks\":[$(find . -name "*.ipynb" -print | sed 's,/*[^/]\+/*$,,' | sort | uniq | sed 's/.*/"&"/'  | sed '$!s/.*/&,/')]}") 
+        echo $nbmatrix
+        echo "nbmatrix=$(echo $nbmatrix)" >> $GITHUB_OUTPUT
+
+  use-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.build.outputs.nbmatrix)}}
+
+    needs: build
+    steps:
+    - name: Use Notebook Matrix
+      run: |
+        jupyter nbconvert --to notebook --execute ${{ matrix.notebooks }} --ExecutePreprocessor.kernel_name=python3 --output=${{ matrix.notebooks }}
