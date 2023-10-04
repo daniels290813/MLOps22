@@ -19,7 +19,6 @@ jobs:
       run: |
         echo $(pwd) 
         echo $(ls)
-        cd project
         nbmatrix=$(echo "{\"notebooks\":[$(find . -name "*.ipynb" -print | sed 's,/*[^/]\+/*$,,' | sort | uniq | sed 's/.*/"&"/'  | sed '$!s/.*/&,/')]}") 
         echo $nbmatrix
         echo "nbmatrix=$(echo $nbmatrix)" >> $GITHUB_OUTPUT
